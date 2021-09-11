@@ -32,6 +32,13 @@ public class PalinPartion_II {
             System.out.println();
       }
 
+      public static void display1(int[] dp) {
+            for (int ele : dp) {
+                  System.out.print(ele + " ");
+            }
+            System.out.println();
+      }
+
       // faafaaaaabaageeg
       public static void minCut(String s) {
             int n = s.length();
@@ -48,10 +55,11 @@ public class PalinPartion_II {
             int[] dp = new int[n + 1];
             Arrays.fill(dp, -1);
             System.out.println(minCut(s, 0, n - 1, dp, pdp));
+            display1(dp);
             display2D(pdp);
       }
 
       public static void main(String[] args) {
-           minCut("abccbc");
+            minCut("abccbc");
       }
 }
