@@ -1,9 +1,7 @@
 package BackEngine;
-
 import java.util.*;
-
-public class WordBreak {
-      public static void wordBreak_backEngg(String s, int idx, boolean[] dp, int maxLen, List<String> wordDict,
+public class WordBreak2 {
+      public static void wordBreak2_backEngg(String s, int idx, boolean[] dp, int maxLen, List<String> wordDict,
                   HashSet<String> set, String ssf, List<String> ans) {
             if (idx >= s.length()) {
                   ans.add(ssf.substring(0, ssf.length() - 1));
@@ -14,12 +12,11 @@ public class WordBreak {
                   if (dp[idx + l]) {
                         String substr = s.substring(idx, idx + l);
                         if (set.contains(substr)) {
-                              wordBreak_backEngg(s, idx + l, dp, maxLen, wordDict, set, ssf + substr + " ", ans);
+                              wordBreak2_backEngg(s, idx + l, dp, maxLen, wordDict, set, ssf + substr + " ", ans);
                         }
                   }
             }
       }
-
       public static List<String> wordBreak(String s, List<String> wordDict) {
             HashSet<String> set = new HashSet<>();
             int len = 0, n = s.length();
@@ -41,7 +38,7 @@ public class WordBreak {
             }
             List<String> ans = new ArrayList<>();
             if (dp[n])
-                  wordBreak_backEngg(s, 0, dp, len, wordDict, set, "", ans);
+                  wordBreak2_backEngg(s, 0, dp, len, wordDict, set, "", ans);
             return ans;
       }
 }
