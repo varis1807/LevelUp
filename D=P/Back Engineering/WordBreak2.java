@@ -1,4 +1,3 @@
-package BackEngine;
 import java.util.*;
 public class WordBreak2 {
       public static void wordBreak2_backEngg(String s, int idx, boolean[] dp, int maxLen, List<String> wordDict,

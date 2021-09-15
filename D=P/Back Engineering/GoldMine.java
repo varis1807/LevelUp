@@ -1,5 +1,3 @@
-package BackEngine;
-
 import java.util.*;
 
 public class GoldMine {
@@ -49,7 +47,10 @@ public class GoldMine {
       }
 
       public static void goldMine() {
-            int[][] arr = { { 10, 33, 13, 15 }, { 22, 21, 04, 1 }, { 5, 0, 2, 3 }, { 0, 6, 14, 2 } };
+            int[][] arr = { { 10, 33, 13, 15 }, 
+                            { 22, 21, 04, 1 }, 
+                            { 5, 0, 2, 3 }, 
+                            { 0, 6, 14, 2 } };
             int[][] dir = { { 0, 1 }, { 1, 1 }, { -1, 1 } };
             int n = arr.length, m = arr[0].length;
             int[][] dp = new int[n][m];
@@ -70,5 +71,9 @@ public class GoldMine {
             goldMine_backEngg(dp, dir, rIdx, 0, "");
 
             System.out.println(maxGold);
+      }
+
+      public static void main(String[] args) {
+            goldMine();
       }
 }

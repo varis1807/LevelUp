@@ -52,6 +52,7 @@ public class EditDist {
                   return dp[n][m] = Math.min(Math.min(insert, delete), replace) + 1;
       }
 
+      // tabu
       public static int minDistance_tabu(String word1, String word2, int N, int M, int[][] dp) {
             for (int n = 0; n <= N; n++) {
                   for (int m = 0; m <= M; m++) {
@@ -82,12 +83,13 @@ public class EditDist {
             display2D(dp);
             return ans;
       }
-      // 0 1 2 3 
-      // 1 1 2 3 
-      // 2 2 1 2 
-      // 3 2 2 2 
-      // 4 3 3 2 
-      // 5 4 4 3 
+
+      // 0 1 2 3
+      // 1 1 2 3
+      // 2 2 1 2
+      // 3 2 2 2
+      // 4 3 3 2
+      // 5 4 4 3
       public static void main(String[] args) {
             System.out.println(minDistance("horse", "ros"));
       }

@@ -3,13 +3,19 @@ import java.util.*;
 public class BuildingBridges {
     // https://www.geeksforgeeks.org/dynamic-programming-building-bridges/
     // {{sp,ep}...}
-    public static int maxmimumBridge(int[][] arr) {
+    public static int maxmimumBridge(int[][] arr, int[] dp) {
         Arrays.sort(arr, (a, b) -> {
             return a[1] - b[1];
         });
+        for(int[]v:arr){
+            for(int a:v){
+                System.out.print(a+" ");
+            }
+            System.out.println();
+        }
 
         int n = arr.length, maxLen = 0;
-        int[] dp = new int[n];
+
         for (int i = 0; i < n; i++) {
             dp[i] = 1;
             for (int j = i - 1; j >= 0; j--) {
@@ -20,6 +26,22 @@ public class BuildingBridges {
             maxLen = Math.max(dp[i], maxLen);
         }
         return maxLen;
+    }
+
+    public static void display(int[] dp) {
+        for (int ele : dp) {
+            System.out.print(ele + "|");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+         int arr[][] ={{8,1},{1,2},{4,3},{3,4},{5,5},{2,6},{6,7},{7,8}};
+        //int[][] arr = { { 6, 2 }, { 4, 3 }, { 2, 6 }, { 1, 5 } };
+        int[] dp = new int[arr.length];
+        System.out.println(maxmimumBridge(arr, dp));
+        display(dp);
     }
 
 }
