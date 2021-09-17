@@ -117,7 +117,11 @@ public class GoldMine {
       }
 
       public static void mx() {
-            int[][] M = { { 10, 33, 13, 15 }, { 22, 21, 04, 1 }, { 5, 0, 2, 3 }, { 0, 6, 14, 2 } };
+            int[][] M = {
+            { 10, 33, 13, 15 }, 
+            { 22, 21, 04, 1 }, 
+            { 5, 0, 2, 3 }, 
+            { 0, 6, 14, 2 } };
             System.out.println(maxGold_tabu(0, 0, M));
             
       }
