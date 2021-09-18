@@ -43,7 +43,7 @@ public class combination {
     // Printing=============================================
     public static void display(int[] dp) {
         for (int ele : dp) {
-            System.out.print(ele + " ");
+            System.out.print(ele + "   |  ");
         }
         System.out.println();
     }
@@ -68,20 +68,19 @@ public class combination {
         int[] arr = { 2, 3, 5, 7 };
         int tar = 10;
         int[] dp = new int[tar + 1];
-        // fill(dp);
+        //fill(dp);
 
         // int[][] dp = new int[arr.length + 1][tar + 1];
         // fill2D(dp);
 
-        // System.out.println(permutation(arr, tar, dp));
-        System.out.println(combination_DP(arr, tar, dp));
-        // display2D(dp);
+       // System.out.println(combination_memo(arr, arr.length, tar, dp));
+         System.out.println(combination_DP(arr, tar, dp));
+        //display2D(dp);
 
-        // display(dp);
+         display(dp);
     }
 
     public static void main(String[] args) {
-        int[] arr = { 2, 3, 5, 7 };
-        System.out.println(infiCombi(arr, 10, arr.length, 0));
+        target();
     }
 }
