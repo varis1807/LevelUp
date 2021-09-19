@@ -38,8 +38,7 @@ public class Fibonacci {
                         dp[n] = n;
                         continue;
                   }
-
-                  int ans = dp[n - 1] + dp[n - 2];// fibo_memo(n - 1, dp) + fibo_memo(n - 2, dp);
+                int ans = dp[n - 1] + dp[n - 2];// fibo_memo(n - 1, dp) + fibo_memo(n - 2, dp);
                   dp[n] = ans;
             }
 

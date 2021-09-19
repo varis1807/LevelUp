@@ -6,13 +6,11 @@ public class subSetSum {
                               dp[n][tar] = (tar == 0);
                               continue;
                         }
-
                         if (tar - arr[n - 1] >= 0)
                               dp[n][tar] = dp[n][tar] || dp[n - 1][tar - arr[n - 1]];
                         dp[n][tar] = dp[n][tar] || dp[n - 1][tar];
                   }
             }
-
             return dp[N][Tar];
       }
 
@@ -25,25 +23,38 @@ public class subSetSum {
                   }
                   return 0;
             }
-
             int count = 0;
             if (tar - arr[N - 1] >= 0 && dp[N - 1][tar - arr[N - 1]])
                   count += targetSum_path(arr, N - 1, dp, tar - arr[N - 1], psf + arr[N - 1] + " ");
             if (dp[N - 1][tar])
                   count += targetSum_path(arr, N - 1, dp, tar, psf);
-
             return count;
+      }
+
+      public static void display(boolean[] dp) {
+            for (boolean ele : dp) {
+                  System.out.print(ele + " | ");
+            }
+            System.out.println();
+      }
+
+      public static void display2D(boolean[][] dp) {
+            for (boolean[] d : dp) {
+                  display(d);
+            }
+            System.out.println();
       }
 
       public static void targetSum_backEngg() {
             int[] arr = { 2, 3, 5, 7 };
             int tar = 10, N = 4;
             boolean[][] dp = new boolean[N + 1][tar + 1];
-            System.out.println(targetSum_DP(arr, N, tar, dp));
+            targetSum_DP(arr, N, tar, dp);
+            // display2D(dp);
             System.out.println(targetSum_path(arr, N, dp, tar, ""));
       }
 
       public static void main(String[] args) {
             targetSum_backEngg();
-        }
+      }
 }

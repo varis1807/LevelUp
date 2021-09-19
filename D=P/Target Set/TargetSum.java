@@ -76,8 +76,38 @@ public class TargetSum {
 
       }
 
+      // 494
+      public static int findTargetSumWays(int[] nums, int n, int sum, int target, int[][] dp) {
+            if (n == 0) {
+                  return dp[n][sum] = target == sum ? 1 : 0;
+            }
+
+            if (dp[n][sum] != -1)
+                  return dp[n][sum];
+
+            int count = 0;
+            count += findTargetSumWays(nums, n - 1, sum + nums[n - 1], target, dp);
+            count += findTargetSumWays(nums, n - 1, sum - nums[n - 1], target, dp);
+
+            return dp[n][sum] = count;
+      }
+
+      public static int findTargetSumWays1(int[] nums, int target) {
+            int sum = 0, n = nums.length;
+            for (int ele : nums)
+                  sum += ele;
+            if (target > sum || target < -sum)
+                  return 0;
+
+            int[][] dp = new int[n + 1][2 * sum + 1];
+            for (int[] d : dp)
+                  Arrays.fill(d, -1);
+
+            return findTargetSumWays(nums, n, sum, sum + target, dp);
+      }
+
       public static void main(String[] args) {
             int[] nums = { 1, 1, 1, 1, 1 };
-            System.out.println(findTargetSumWays(nums, 3));
+            System.out.println(findTargetSumWays1(nums, 3));
       }
 }
