@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class friendPairing {
+public class friendPairing {                 
       static long mod = (int) 1e9;
 
       public long countFriendsPairings(int n, long[] dp) {

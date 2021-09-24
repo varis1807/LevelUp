@@ -5,14 +5,12 @@ public class MatChainMul {
             }
             System.out.println();
       }
-
       public static void display2D(int[][] dp) {
             for (int[] d : dp) {
                   display(d);
             }
             System.out.println();
       }
-
       // Rec
       public static int mcm_rec(int[] arr, int si, int ei) {
             if (ei - si == 1) {
@@ -27,7 +25,6 @@ public class MatChainMul {
             }
             return minRes;
       }
-
       // Memo
       public static int mcm_memo(int[] arr, int si, int ei, int[][] dp) {
             if (ei - si == 1) {
@@ -45,7 +42,6 @@ public class MatChainMul {
             }
             return dp[si][ei] = minRes;
       }
-
       // Tabulation
       public static int mcm_Dp(int[] arr, int SI, int EI, int[][] dp) {
             int n = arr.length;
@@ -67,7 +63,6 @@ public class MatChainMul {
             }
             return dp[SI][EI];
       }
-
       public static void mcm() {
             int[] arr = { 3, 1, 5, 8 };// [3,1,5,8]{ 10, 30, 5, 60 };
             int n = arr.length;
@@ -75,7 +70,6 @@ public class MatChainMul {
             System.out.println(mcm_memo(arr, 0, n - 1, dp));
             display2D(dp);
       }
-
       public static void main(String[] args) {
             mcm();
       }
