@@ -28,15 +28,36 @@ public class findPaths {
             return dp[sr][sc][K] = count;
       }
 
-      public static int findPath(int n, int m, int k, int r, int c) {
+      public static void findPath(int n, int m, int k, int r, int c) {
             int[][][] dpp = new int[n + 1][m + 1][k + 1];
             for (int[][] dp : dpp)
                   for (int[] d : dp)
                         Arrays.fill(d, -1);
 
-            return findPath(n, m, k, r, c, dpp);
+            System.out.println(findPath(n, m, k, r, c, dpp));
+            Display3D(dpp);
       }
+
+      public static void Display1D(int[] d) {
+            for (int ele : d)
+                  System.out.print(ele + " | ");
+            System.out.println();
+      }
+
+      public static void Display2D(int[][] dp) {
+            for (int[] d : dp)
+                  Display1D(d);
+            System.out.println();
+      }
+
+      public static void Display3D(int[][][] dpp) {
+            for (int[][] d : dpp)
+                  Display2D(d);
+            System.out.println();
+      }
+
       public static void main(String[] args) {
-            System.out.println(findPath(2, 2, 2, 0, 0));
+            findPath(2, 2, 2, 0, 0);
+
       }
 }
