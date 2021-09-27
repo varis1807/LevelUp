@@ -107,7 +107,7 @@ public class foundation {
     }
 
     public static void printArray(int[] arr, int idx) {
-        if (idx >= arr.length)
+        if (idx == arr.length)
             return;
 
         System.out.println(arr[idx]);
@@ -176,6 +176,11 @@ public class foundation {
             ans[count - 1] = idx;
 
         return ans;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5, 6 };
+        System.out.println(allIndex(arr, 3, 0, 0));
     }
 
     public static ArrayList<String> subsequence(String str, int idx) {
@@ -387,16 +392,16 @@ public class foundation {
         System.out.println(ans);
     }
 
-    public static void main(String[] args) {
-        // int p = scn.nextInt();
-        // int[] arr = new int[p];
-        // for (int i = 0; i < arr.length; i++) {
-        // arr[i] = scn.nextInt();
-        // }
-        ArrayList<String> ans = new ArrayList<>();
-        // System.out.println(mazePath_HVD(1, 1, 3, 3, "", ans));
-        System.out.println(subsequence("bcabc", 0));
-    }
+    // public static void main(String[] args) {
+    // // int p = scn.nextInt();
+    // // int[] arr = new int[p];
+    // // for (int i = 0; i < arr.length; i++) {
+    // // arr[i] = scn.nextInt();
+    // // }
+    // ArrayList<String> ans = new ArrayList<>();
+    // // System.out.println(mazePath_HVD(1, 1, 3, 3, "", ans));
+    // System.out.println(subsequence("bcabc", 0));
+    // }
 
     // https://zoom.us/j/97943084645?pwd=RWhibFJiRGFwUGdWZmxVcUdnV2NKZz09
 
