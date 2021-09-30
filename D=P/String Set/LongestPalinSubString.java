@@ -44,7 +44,7 @@ public class LongestPalinSubString {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("gegpeepf"));
+        System.out.println(longestPalindrome("hellosannasmith"));
 
     }
 }

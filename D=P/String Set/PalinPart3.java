@@ -1,3 +1,4 @@
+import java.util.*;
 public class PalinPart3 {
     // 1278
     public int[][] minChanges(String str) {

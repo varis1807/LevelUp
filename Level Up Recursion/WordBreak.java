@@ -15,7 +15,6 @@ public class WordBreak {
             }
 
       }
-
       public static void main(String[] args) {
             int n = scn.nextInt();
             HashSet<String> dict = new HashSet<>();
