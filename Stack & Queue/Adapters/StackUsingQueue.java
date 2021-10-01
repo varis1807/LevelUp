@@ -2,6 +2,9 @@
 import java.util.LinkedList;
 
 public class StackUsingQueue {
+
+      // Push Efficient
+      // O(1)
       LinkedList<Integer> queue = new LinkedList<>();
       LinkedList<Integer> temp = new LinkedList<>();
       public int topEle = 0;
@@ -40,4 +43,34 @@ public class StackUsingQueue {
             return this.queue.size() == 0;
       }
 
+      // Pop Efficient
+      // O(1)
+      LinkedList<Integer> que = new LinkedList<>();
+      private void transfer(LinkedList<Integer> st1, LinkedList<Integer> st2) {
+            while (st1.size() != 0) {
+                  st2.addLast(st1.removeFirst());
+            }
+      }
+
+      public void push1(int x) {
+            temp.addLast(x);
+            transfer(que, temp);
+
+            LinkedList<Integer> temp1 = que;
+            que = temp;
+            temp = temp1;
+      }
+
+      // O(1)
+      public int pop1() {
+            return que.removeFirst();
+      }
+
+      public int top1() {
+            return que.getFirst();
+      }
+
+      public boolean empty1() {
+            return que.size() == 0;
+      }
 }
