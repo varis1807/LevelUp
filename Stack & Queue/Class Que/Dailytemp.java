@@ -24,5 +24,19 @@ public class Dailytemp {
             }
             return ans;
       }
-      
+
+      // O[n^2]
+      public int[] dailyTemperatures1(int[] arr) {
+            int n = arr.length;
+            int[] ans = new int[n];
+            LinkedList<Integer> st = new LinkedList<>();
+            for (int i = 0; i < n; i++) {
+                  while (!st.isEmpty() && arr[st.getFirst()] < arr[i]) {
+                        ans[st.getFirst()] = i - st.getFirst();
+                        st.removeFirst();
+                  }
+                  st.addFirst(i);
+            }
+            return ans;
+      }
 }
