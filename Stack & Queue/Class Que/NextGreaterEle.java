@@ -19,7 +19,7 @@ public class NextGreaterEle {
             return ans;
       }
 
-      public static int[] NSOR(int[] arr) {
+      public static void NSOR(int[] arr) {
             int n = arr.length;
             int[] ans = new int[n];
             Arrays.fill(ans, n);
@@ -33,7 +33,13 @@ public class NextGreaterEle {
                   st.addFirst(i);
             }
 
-            return ans;
+            for (int ele : ans)
+                  System.out.println(ele + " ");
+      }
+
+      public static void main(String[] args) {
+            int[] arr = { 2, 1, 5, 6, 2, 3 };
+            NSOR(arr);
       }
 
       public static int[] NGOL(int[] arr) {
