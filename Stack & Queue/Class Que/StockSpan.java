@@ -34,7 +34,6 @@ public class StockSpan {
                   ans[i] = i - st.getFirst();
                   st.addFirst(i);
             }
-
             return ans;
       }
 }
