@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class MaxFreqStack {
+      // O(n)
       private class pair implements Comparable<pair> {
             int val = 0;
             int idx = 0;
