@@ -48,4 +48,39 @@ public class MaxFreqStack {
             pair rp = pq.peek();
             return rp.val;
       }
+
+      // O(1)
+      private ArrayList<LinkedList<Integer>> freqMap;
+      private HashMap<Integer, Integer> map;
+      private int maxFreq = 0;
+
+      // public FreqStack() {
+      // freqMap = new ArrayList<>();
+      // map = new HashMap<>();
+
+      // freqMap.add(new LinkedList<>());
+      // }
+
+      public void push1(int val) {
+            map.put(val, map.getOrDefault(val, 0) + 1);
+            maxFreq = Math.max(maxFreq, map.get(val));
+
+            if (maxFreq == freqMap.size())
+                  freqMap.add(new LinkedList<>());
+
+            freqMap.get(map.get(val)).addFirst(val);
+      }
+
+      public int pop1() {
+            int rv = freqMap.get(maxFreq).removeFirst();
+            if (freqMap.get(maxFreq).size() == 0) {
+                  freqMap.remove(maxFreq--);
+            }
+
+            map.put(rv, map.get(rv) - 1);
+            if (map.get(rv) == 0)
+                  map.remove(rv);
+
+            return rv;
+      }
 }
