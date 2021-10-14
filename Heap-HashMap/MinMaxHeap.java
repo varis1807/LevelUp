@@ -1,17 +1,17 @@
 import java.util.ArrayList;
 
-public class maxHeap {
+public class MinMaxHeap {
 
       private ArrayList<Integer> arr;
       private boolean isMax = true;
 
-      public maxHeap(boolean isMax) {
+      public MinMaxHeap(boolean isMax) {
             this.arr = new ArrayList<>();
             this.isMax = isMax;
       }
 
       // O(n + nLog(n)) -> O(n)
-      public maxHeap(int[] arr, boolean isMax) {
+      public MinMaxHeap(int[] arr, boolean isMax) {
             this(isMax);
             for (int ele : arr)
                   this.arr.add(ele);
@@ -96,5 +96,14 @@ public class maxHeap {
                         arr[i][j] = list.get(i).get(j);
                   }
             }
+      }
+      public static void main(String[] args) {
+            int[] arr = { 10, 20, 30, -2, -3, -4, 5, 6, 7, 8, 9, 22, 11, 13, 14 };
+            MinMaxHeap hp = new MinMaxHeap(arr,false); // true -> max, false -> min
+
+            while (hp.size() != 0) {
+                  System.out.print(hp.remove() + " ");
+            }
+
       }
 }

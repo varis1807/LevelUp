@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class minHeap {
+public class Heap {
       private ArrayList<Integer> arr;
 
-      public minHeap() {
+      public Heap() {
             this.arr = new ArrayList<>();
       }
 
       // O(n + nLog(n)) -> O(n)
-      public minHeap(int[] arr) {
+      public Heap(int[] arr) {
             this();
             for (int ele : arr)
                   this.arr.add(ele);
@@ -84,7 +84,7 @@ public class minHeap {
 
       public static void main(String[] args) {
             int[] arr = { 10, 20, 30, -2, -3, -4, 5, 6, 7, 8, 9, 22, 11, 13, 14 };
-            minHeap hp = new minHeap(arr); // true -> max, false -> min
+            Heap hp = new Heap(arr); // true -> max, false -> min
 
             while (hp.size() != 0) {
                   System.out.print(hp.remove() + " ");
