@@ -1,3 +1,4 @@
+import java.util.*;
 public class RemoveAllAdjaDup2 {
       public static String removeDuplicates(String s, int k) {
             Stack<Character> charSt = new Stack<>();
