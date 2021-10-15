@@ -88,18 +88,9 @@ public class MinMaxHeap {
             return this.arr.get(0);
       }
 
-      public static void input(ArrayList<ArrayList<Integer>> list) {
-            int n = list.size(), m = list.get(0).size();
-            int[][] arr = new int[n][m];
-            for (int i = 0; i < n; i++) {
-                  for (int j = 0; j < m; j++) {
-                        arr[i][j] = list.get(i).get(j);
-                  }
-            }
-      }
       public static void main(String[] args) {
             int[] arr = { 10, 20, 30, -2, -3, -4, 5, 6, 7, 8, 9, 22, 11, 13, 14 };
-            MinMaxHeap hp = new MinMaxHeap(arr,false); // true -> max, false -> min
+            MinMaxHeap hp = new MinMaxHeap(false); // true -> max, false -> min
 
             while (hp.size() != 0) {
                   System.out.print(hp.remove() + " ");
