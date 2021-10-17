@@ -28,25 +28,29 @@ public class KmostFrequentEle {
             HashMap<Integer, Integer> map = new HashMap<>();
             for (int ele : nums)
                   map.put(ele, map.getOrDefault(ele, 0) + 1);
-            PriorityQueue<Integer> pq = new PriorityQueue<>();
-            for(int ele:map.keySet()){
+            PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> (b - a));
+            for (int ele : map.keySet()) {
                   pq.add(ele);
-                  if(pq.size()>k)
-                  pq.remove();
+                  if (pq.size() > k)
+                        pq.remove();
             }
-            int idx=0;
-            int[] ans=new int[k];
-            while(pq.size()!=0){
-                  int key=pq.peek();
+            int idx = 0;
+            int[] ans = new int[k];
+            while (pq.size() != 0) {
+                  int key = pq.peek();
                   pq.remove();
-                  ans[idx]=key;
+                  ans[idx] = key;
                   idx++;
+            }
+            for(int i=0; i<ans.length; i++){
+                  System.out.print(ans[i]+"");
             }
             return ans;
       }
 
       public static void main(String[] args) {
             int[] arr = { 1, 1, 1, 2, 2, 3 };
-            topKFrequent(arr, 0);
+            System.out.println(topKFrequent(arr, 2));
+            
       }
 }
