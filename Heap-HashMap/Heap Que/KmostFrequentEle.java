@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class KmostFrequentEle {
       // CPP
       // // 347
@@ -24,31 +25,36 @@ public class KmostFrequentEle {
       // }
       public static int[] topKFrequent(int[] nums, int k) {
             HashMap<Integer, Integer> map = new HashMap<>();
+            // for frequency..
             for (int ele : nums)
                   map.put(ele, map.getOrDefault(ele, 0) + 1);
-            PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> (b - a));
+            // max heap
+            PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> {
+                  //For lexographical order
+                // if(map.get(a)==map.get(b))
+                //     return b.compareTo(a);
+                  return map.get(a) - map.get(b);// other-this
+            });
             for (int ele : map.keySet()) {
                   pq.add(ele);
                   if (pq.size() > k)
                         pq.remove();
             }
-            int idx = 0;
+             int idx = 0;
             int[] ans = new int[k];
             while (pq.size() != 0) {
-                  int key = pq.peek();
-                  pq.remove();
-                  ans[idx] = key;
-                  idx++;
+            int key = pq.remove();;
+            ans[idx] = key;
+            idx++;
             }
-            for(int i=0; i<ans.length; i++){
-                  System.out.print(ans[i]+"");
-            }
+            for(int i:ans)
+            System.out.println(i+" ");
             return ans;
       }
 
       public static void main(String[] args) {
-            int[] arr = { 1, 1, 1, 2, 2, 3 };
+            int[] arr = { 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 4 };
             System.out.println(topKFrequent(arr, 2));
-            
+
       }
 }
