@@ -15,9 +15,16 @@ public class KSmall_Largest {
             while (l <= r) {
                   pq.add(arr[l]);
                   if (pq.size() > k)
-                        pq.remove();
+                  pq.remove();
                   l++;
             }
+            while (pq.size() != 0)
+                  System.out.println(pq.remove());
             return pq.peek();
+      }
+
+      public static void main(String[] args) {
+            int[] arr = { 7, 4, 10, 3, 20, 15 };
+            System.out.println(kthSmallest2(arr, 0, 5, 3));
       }
 }
