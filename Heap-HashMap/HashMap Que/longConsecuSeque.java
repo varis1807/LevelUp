@@ -1,3 +1,4 @@
+import java.util.*;
 public class longConsecuSeque {
       // 128
       public static int longestConsecutive(int[] nums) {

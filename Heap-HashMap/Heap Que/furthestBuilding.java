@@ -2,7 +2,7 @@ import java.util.*;
 
 public class furthestBuilding {
       // 1642
-      public static int furthestBuilding(int[] heights, int bricks, int ladders) {
+      public static int furthestBuild(int[] heights, int bricks, int ladders) {
             PriorityQueue<Integer> pq = new PriorityQueue<>();
 
             int n = heights.length;

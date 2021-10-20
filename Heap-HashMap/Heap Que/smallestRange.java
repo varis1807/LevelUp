@@ -2,7 +2,7 @@ import java.util.*;
 
 public class smallestRange {
       // 632
-      public static int[] smallestRange(List<List<Integer>> nums) {
+      public static int[] smallRange(List<List<Integer>> nums) {
 
             int n = nums.size();
 
