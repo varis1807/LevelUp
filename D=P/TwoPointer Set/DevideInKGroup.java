@@ -47,7 +47,7 @@ public class DevideInKGroup {
       }
 
       public static void divideInKGroup() {
-            int n = 4;
+            int n = 3;
             int k = 2;
 
             int[][] dp = new int[n + 1][k + 1];
