@@ -6,6 +6,6 @@ public class gcd {
       }
 
       public static void main(String[] args) {
-            System.out.println(GCD(5, 6));
+            System.out.println(GCD(2, 2));
       }
 }
