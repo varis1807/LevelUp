@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class KclosestEle {
       public class Pair implements Comparable<Pair> {
             int val, gap;
