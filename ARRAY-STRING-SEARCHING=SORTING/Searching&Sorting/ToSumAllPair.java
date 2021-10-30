@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*;                                    
 public class ToSumAllPair {
       public List<List<Integer>> allPairs(int[] nums, int tar, int si, int ei) {
             List<List<Integer>> ans = new ArrayList<>();
