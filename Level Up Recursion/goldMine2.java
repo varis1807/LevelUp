@@ -7,7 +7,7 @@ public class goldMine2 {
                   return;
 
             }
-
+ 
             visited[i][j] = true;
             bag.add(arr[i][j]);
             travelAndCollectGold(arr, i - 1, j, visited, bag);
