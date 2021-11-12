@@ -15,7 +15,11 @@ public class clossestEle {
                   else
                         ei = mid - 1;
             }
-
             return data - arr[ei] < arr[si] - data ? ei : si;
+      }
+
+      public static void main(String[] args) {
+            int[] arr = { 2, 8, 9, 12, 13, 15, 20, 25 };
+            System.out.println(closesetElement(arr, 10));
       }
 }
