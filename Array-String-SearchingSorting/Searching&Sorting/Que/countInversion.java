@@ -1,6 +1,20 @@
 import java.util.*;
 
 public class countInversion {
+      // brute force
+      // O(n^2)
+      static long inversionCount1(long arr[], long N) {
+            int count = 0;
+            for (int i = 0; i < N; i++) {
+                  for (int j = i + 1; j < N; j++) {
+                        if (arr[i] > arr[j])
+                              count++;
+                  }
+            }
+            return count;
+      }
+
+      // O(n)
       public static long totalInversionCount(long[] arr, long[] sortedArray, long si, long mid, long ei) {
             int i = (int) si, j = (int) mid + 1, k = (int) si;
             long count = 0;
