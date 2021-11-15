@@ -29,7 +29,7 @@ public class construction {
       }
 
       public static void construct() {
-            int N = 7;//edges
+            int N = 7;// vertex
             ArrayList<Edge>[] graph = new ArrayList[N];
             for (int i = 0; i < N; i++)
                   graph[i] = new ArrayList<>();
