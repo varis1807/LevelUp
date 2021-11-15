@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class construction {
       public static class Edge {
             int src, nbr, wt;
@@ -11,5 +13,15 @@ public class construction {
                   this.wt = wt;
             }
       }
-      public static
+
+      public static void main(String[] args) {
+            Scanner scn = new Scanner(System.in);
+            int v = scn.nextInt();
+            int e = scn.nextInt();
+            while(e-->0){
+                  int u=scn.nextInt();
+                  int v=scn.nextInt();
+                  int wt=scn.nextInt();
+            }
+      }
 }
