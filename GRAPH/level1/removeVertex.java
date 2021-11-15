@@ -1,8 +1,11 @@
+import java.util.*;
+
 public class removeVertex {
       public static void addEdge(ArrayList<Edge>[] graph, int u, int v, int w) {
             graph[u].add(new Edge(u, v, w));
             graph[v].add(new Edge(v, u, w));
       }
+
       public static void display(ArrayList<Edge>[] graph, int N) {
             for (int i = 0; i < N; i++) {
                   System.out.print(i + " -> ");
@@ -12,6 +15,7 @@ public class removeVertex {
                   System.out.println();
             }
       }
+
       public static void construct() {
             int N = 7;// vertex
             ArrayList<Edge>[] graph = new ArrayList[N];
@@ -25,12 +29,37 @@ public class removeVertex {
             addEdge(graph, 4, 5, 2);
             addEdge(graph, 4, 6, 8);
             addEdge(graph, 5, 6, 3);
+            removeU(graph, 3);
             display(graph, N);
-            System.out.println("|----------------------------|");
-            System.out.println(findedge(graph,1,2));
-            System.out.println("|----------------------------|");
       }
+
       public static void main(String[] args) {
             construct();
+      }
+
+      public static int findEdge(ArrayList<Edge>[] graph, int u, int v) {
+            ArrayList<Edge> list = graph[u];
+            for (int i = 0; i < list.size(); i++) {
+                  Edge e = list.get(i);
+                  if (e.nbr == v)
+                        return i;
+            }
+            return -1;
+      }
+
+      public static void removeEdge(ArrayList<Edge>[] graph, int u, int v) {
+            int i1 = findEdge(graph, u, v);
+            int i2 = findEdge(graph, v, u);
+            graph[u].remove(i1);
+            graph[v].remove(i2);
+      }
+
+      public static void removeU(ArrayList<Edge>[] graph, int u) {
+            ArrayList<Edge> list = graph[u];
+            // System.out.println(list.size());
+            for (int i = list.size() - 1; i >= 0; i--) {
+                  Edge e = list.get(i);
+                  removeEdge(graph, e.src, e.nbr);
+            }
       }
 }
