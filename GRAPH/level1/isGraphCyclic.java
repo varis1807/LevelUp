@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BFS {
+public class isGraphCyclic {
       public static void addEdge(ArrayList<Edge>[] graph, int u, int v, int w) {
             graph[u].add(new Edge(u, v, w));
             graph[v].add(new Edge(v, u, w));
@@ -25,50 +25,42 @@ public class BFS {
             addEdge(graph, 0, 3, 10);
             addEdge(graph, 1, 2, 10);
             addEdge(graph, 2, 3, 40);
-            addEdge(graph, 3, 4, 2);
-            addEdge(graph, 4, 5, 2);
-            addEdge(graph, 4, 6, 8);
-            addEdge(graph, 5, 6, 3);
+            //addEdge(graph, 3, 4, 2);
+            //addEdge(graph, 4, 5, 2);
+            //addEdge(graph, 4, 6, 8);
+           // addEdge(graph, 5, 6, 3);
             // display(graph, N);
-            bfs_isCycle(graph, 0, 6);
+            System.out.println(isCyclic(graph, 0));
       }
 
       public static void main(String[] args) {
             construct();
       }
 
-      public static void bfs_isCycle(ArrayList<Edge>[] graph, int src, int dest) {
+      public static boolean isCyclic(ArrayList<Edge>[] graph, int src) {
             LinkedList<Integer> que = new LinkedList<>();
-            boolean[] vis = new boolean[graph.length];
-            que.add(src);
+            int n = graph.length;
+            boolean[] vis = new boolean[n];
+            que.addLast(src);
             int level = 0;
-            boolean isCyclePresent = false;
-            int shortestPath = -1;
+            boolean isCycle = false;
+
             while (que.size() != 0) {
                   int size = que.size();
-                  System.out.print(level + " ->> ");
                   while (size-- > 0) {
                         int rvtx = que.removeFirst();
-
                         if (vis[rvtx]) {
-                              isCyclePresent = true;
+                              isCycle = true;
                               continue;
                         }
-
-                        if (rvtx == dest)
-                              shortestPath = level;
-
                         vis[rvtx] = true;
-
-                        System.out.print(rvtx + " ");
-
                         for (Edge e : graph[rvtx]) {
                               if (!vis[e.nbr])
                                     que.addLast(e.nbr);
                         }
                   }
-                  System.out.println();
                   level++;
             }
+            return isCycle;
       }
 }
