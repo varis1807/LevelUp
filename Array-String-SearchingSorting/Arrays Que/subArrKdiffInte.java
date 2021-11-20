@@ -1,3 +1,4 @@
+import java.util.*;
 public class subArrKdiffInte {
       public int subarraysWithAtMostKDistinct(int[] nums, int k) {
             int n=nums.length,si=0,ei=0,count=0,ans=0;
