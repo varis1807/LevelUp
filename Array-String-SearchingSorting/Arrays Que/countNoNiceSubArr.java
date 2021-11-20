@@ -18,7 +18,7 @@ public class countNoNiceSubArr {
             }
             return ans;
         }
-        public int numberOfSubarrays(int[] nums, int k) {
+        public static int numberOfSubarrays(int[] nums, int k) {
           return numberOfSubarraysAtMostK(nums,k)-numberOfSubarraysAtMostK(nums,k-1);
         }
 }
