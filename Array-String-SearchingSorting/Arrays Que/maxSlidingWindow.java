@@ -1,6 +1,6 @@
 import java.util.*;
 public class maxSlidingWindow{
-      public int[] maxSlidingWindow(int[] nums, int k) {
+      public static int[] maxSlidingWindow(int[] nums, int k) {
             PriorityQueue<Integer> pq=new PriorityQueue<>((a,b)->{
                 return nums[b]-nums[a];
             });
