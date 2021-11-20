@@ -1,5 +1,5 @@
 public class countNoNiceSubArr {
-      public  int numberOfSubarraysAtMostK(int[] nums, int k) {
+      public static int numberOfSubarraysAtMostK(int[] nums, int k) {
             int n=nums.length;
             int si=0, ei=0;
            // int[] fre=new int[50001];
