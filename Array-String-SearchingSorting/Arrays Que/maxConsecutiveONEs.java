@@ -15,7 +15,7 @@ public class maxConsecutiveONEs {
             return res;
       }
 
-      // O(nlog(n))
+      // O((n))
       public int findMaxConsecutiveOnes1(int[] nums) {
             int si = 0, ei = 0, n = nums.length;
             int count = 0; // count 0's
