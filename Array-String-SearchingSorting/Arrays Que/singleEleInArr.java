@@ -1,3 +1,4 @@
+import java.util.*;
 public class singleEleInArr {
       public int singleNonDuplicate(int[] arr) {
             int n = arr.length;
