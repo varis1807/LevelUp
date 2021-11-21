@@ -34,7 +34,7 @@ public class smallestRange {
             return new int[] { sp, ep };
       }
       public static void main(String[] args) {
-            List<List<Integer>> nums={{1,2,3},{3,4,5,5,5}};
-            System.out.println(smallRange(nums));
+            //List<List<Integer>> nums={{1,2,3},{3,4,5,5,5}};
+           // System.out.println(smallRange(nums));
       }
 }
