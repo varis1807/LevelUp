@@ -21,16 +21,35 @@ public class BFS {
             ArrayList<Edge>[] graph = new ArrayList[N];
             for (int i = 0; i < N; i++)
                   graph[i] = new ArrayList<>();
-            addEdge(graph, 0, 1, 10);
-            addEdge(graph, 0, 3, 10);
+            // addEdge(graph, 0, 1, 10);
+            // addEdge(graph, 0, 3, 10);
+            // addEdge(graph, 1, 2, 10);
+            // addEdge(graph, 2, 3, 40);
+            // addEdge(graph, 3, 4, 2);
+             // addEdge(graph, 4, 6, 8);
+            // addEdge(graph, 5, 6, 3);
             addEdge(graph, 1, 2, 10);
-            addEdge(graph, 2, 3, 40);
-            addEdge(graph, 3, 4, 2);
-            addEdge(graph, 4, 5, 2);
-            addEdge(graph, 4, 6, 8);
-            addEdge(graph, 5, 6, 3);
-            // display(graph, N);
-            bfs_isCycle(graph, 0, 6);
+            addEdge(graph, 1, 3, 10);
+            addEdge(graph, 1, 4, 10);
+            addEdge(graph, 2, 1, 40);
+            addEdge(graph, 2, 3, 2);
+            addEdge(graph, 2, 5, 2);
+            addEdge(graph, 3, 1, 10);
+            addEdge(graph, 3, 2, 10);
+            addEdge(graph, 3, 4, 10);
+            addEdge(graph, 3, 5, 40);
+            addEdge(graph, 3, 6, 2);
+            addEdge(graph, 4, 1, 2);
+            addEdge(graph, 4, 3, 8);
+            addEdge(graph, 4, 6, 3);
+            addEdge(graph, 5, 2, 40);
+            addEdge(graph, 5, 3, 2);
+            addEdge(graph, 5, 6, 2);
+            addEdge(graph, 6, 3, 8);
+            addEdge(graph, 6, 4, 3);
+            addEdge(graph, 6, 5, 3);
+            display(graph, N);
+            // bfs_isCycle(graph, 0, 6);
       }
 
       public static void main(String[] args) {
