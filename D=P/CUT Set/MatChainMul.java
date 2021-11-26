@@ -60,7 +60,7 @@ public class MatChainMul {
                               int leftRes = dp[si][cut];
                               int rightRes = dp[cut][ei];
 
-                              minRes = Math.min(minRes, leftRes + arr[si] * arr[cut] * arr[ei] + rightRes);
+                          minRes = Math.min(minRes, leftRes + arr[si] * arr[cut] * arr[ei] + rightRes);
                         }
                         dp[si][ei] = minRes;
                   }
