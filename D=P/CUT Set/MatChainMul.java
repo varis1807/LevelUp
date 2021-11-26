@@ -69,7 +69,7 @@ public class MatChainMul {
       }
 
       public static void mcm() {
-            int[] arr = { 3, 1, 5, 8 };// [3,1,5,8]{ 10, 30, 5, 60 };
+            int[] arr = { 12, 5, 10, 6, 5 };// [3,1,5,8]{ 10, 30, 5, 60 };
             int n = arr.length;
             int[][] dp = new int[n][n];
             System.out.println(mcm_Dp(arr, 0, n - 1, dp));
