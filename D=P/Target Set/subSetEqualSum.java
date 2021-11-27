@@ -79,22 +79,33 @@ public class subSetEqualSum {
 
       // Driver Program to test above functions
 
-      public static int perfectSum(int arr[], int n, int sum) {
-            if (sum == 0)
-                  return 1;
-            int count = 0;
-            for (int i = 0; i < arr.length; i++) {
-                 // if (sum - arr[i] >= 0)
-                        count += perfectSum(arr, n, sum - arr[i]);
+      public static int perfectSum(int coins[],int n, int tar,String asf) 
+	{ 
+        if (tar == 0) {
+            System.out.println(asf);
+            return 1;
+        }
+        int count = 0;
+        for (int i = 0; i < coins.length; i++) {
+            if (coins[i] > 0 && tar - coins[i] >= 0) {
+                int val = coins[i];
+                coins[i] = -coins[i];
+
+                count += perfectSum(coins,n, tar - val, asf + val + " ");
+
+                coins[i] = -coins[i];
             }
-            return count;
-      }
+        }
+
+        return count;
+    
+	} 
 
       public static void main(String args[]) {
             int arr[] = { 15, 5, 10 };
             int n = arr.length;
             int sum = 30;
-            System.out.println(perfectSum(arr, n, sum));
+            System.out.println(perfectSum(arr, n, sum,""));
             // printAllSubsets(arr, n, sum);
       }
 }
