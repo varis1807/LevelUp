@@ -1,7 +1,7 @@
 public class SBS6 {
        // leet 123 ==================================================== 
 
-    public int maxProfit(int[] prices) {
+    public static int maxProfit(int[] prices) {
       int n=prices.length;
       
       int[][][] dp=new int[n][3][2];
@@ -38,7 +38,6 @@ public class SBS6 {
   }
 
   // leet 123 optimized  ====================================================== 
-
   public int maxProfit1(int[] prices) {
       int dpi20=0;
       int dpi21=-(int)(1e9);
