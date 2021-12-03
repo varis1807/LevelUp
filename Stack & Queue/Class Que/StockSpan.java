@@ -20,7 +20,7 @@ public class StockSpan {
             }
             return ans;
       }
-
+//
       // https://practice.geeksforgeeks.org/problems/stock-span-problem-1587115621/1
       public static int[] calculateSpan1(int[] arr, int n) {
             int[] ans = new int[n];
