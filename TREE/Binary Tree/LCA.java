@@ -30,8 +30,10 @@ public class LCA {
       public static boolean nTrP(Node root,Node data,ArrayList<Node> nTr){
             if(root==null || data==null)
             return false;
+            boolean ans=false;
             if(root==data)
             nTr.add(root); 
+            
             
             return ans;
       }
