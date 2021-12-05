@@ -24,7 +24,7 @@ public class kDown {
             root.right.left = new Node(6);
             root.right.right = new Node(7);
             List<Integer> ans = new ArrayList<>();
-            fill(root, ans, 3);
+            fill(root, ans, 2);
             System.out.println(ans);
       }
 }
