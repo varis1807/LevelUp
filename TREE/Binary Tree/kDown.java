@@ -1,7 +1,8 @@
 import java.util.*;
+
 public class kDown {
       // k down in a binary tree =====================
-      public void fill(Node root, List<Integer> ans, int k, int blocker) {
+      public static void fill(Node root, List<Integer> ans, int k) {
             if (root == null)
                   return;
 
@@ -10,7 +11,20 @@ public class kDown {
                   return;
             }
 
-            fill(root.left, ans, k - 1, blocker);
-            fill(root.right, ans, k - 1, blocker);
+            fill(root.left, ans, k - 1);
+            fill(root.right, ans, k - 1);
+      }
+
+      public static void main(String[] args) {
+            Node root = new Node(1);
+            root.left = new Node(2);
+            root.right = new Node(3);
+            root.left.left = new Node(4);
+            root.left.right = new Node(5);
+            root.right.left = new Node(6);
+            root.right.right = new Node(7);
+            List<Integer> ans = new ArrayList<>();
+            fill(root, ans, 3);
+            System.out.println(ans);
       }
 }
