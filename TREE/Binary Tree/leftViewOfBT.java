@@ -23,8 +23,28 @@ public class leftViewOfBT {
             }
             return ans;
       }
+
       // recursion
-      
+      public void leftViewRec(ArrayList<Integer> ans, Node root, int level) {
+            if (root == null)
+                  return;
+
+            if (level == ans.size()) {
+                  ans.add(root.val);
+            }
+
+            leftViewRec(ans, root.left, level + 1);
+            leftViewRec(ans, root.right, level + 1);
+      }
+
+      ArrayList<Integer> leftView(Node root) {
+            ArrayList<Integer> ans = new ArrayList<>();
+
+            leftViewRec(ans, root, 0);
+
+            return ans;
+      }
+
       public static void main(String[] args) {
             Node root = new Node(4);
             root.left = new Node(5);
