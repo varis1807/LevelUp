@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class rightView {
-      public static void rightViewRec(ArrayList ans, Node root, int level) {
+      public static void rightViewRec(ArrayList<Integer> ans, Node root, int level) {
             if (root == null)
                   return;
 
