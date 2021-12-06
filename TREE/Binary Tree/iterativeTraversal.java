@@ -2,9 +2,14 @@ import java.util.*;
 
 public class iterativeTraversal {
       // pre-order
-      public static List<Integer> preOrder(Node root){
-            
+      public static List<Integer> preOrder(Node root) {
+            List<Integer> ans = new ArrayList<>();
+            if (root == null)
+                  return ans;
+            LinkedList<Node> st = new LinkedList<>();
+
       }
+
       public static void main(String[] args) {
             Node root = new Node(1);
             root.left = new Node(2);
