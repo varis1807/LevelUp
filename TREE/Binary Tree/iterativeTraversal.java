@@ -22,18 +22,54 @@ public class iterativeTraversal {
       // in-order
       public static List<Integer> inOrder(Node root) {
             List<Integer> ans = new ArrayList<>();
-            LinkedList<Node> st=new LinkedList<>();
-            
+            LinkedList<Node> st = new LinkedList<>();
+            Node node = root;
+            while (true) {
+                  if (node != null) {
+                        st.addFirst(node);
+                        node = node.left;
+                  } else {
+                        if (st.isEmpty())
+                              break;
+                        node = st.pop();
+                        ans.add(node.val);
+                        node = node.right;
+                  }
+            }
+            return ans;
       }
-
+//post-order
+public static List<Integer> postOrder(Node root){
+      
+}
       public static void main(String[] args) {
+            // -----------------------------------------------------
+            // Node root = new Node(1);
+            // root.left = new Node(2);
+            // root.right = new Node(7);
+            // root.left.left = new Node(3);
+            // root.left.right = new Node(4);
+            // root.left.right.left = new Node(5);
+            // root.left.right.right = new Node(6);
+            // System.out.println(preOrder(root));
+            // -----------------------------------------------------
+            // Node root=new Node(1);
+            // root.left=new Node(2);
+            // root.right=new Node(3);
+            // root.left.left=new Node(4);
+            // root.left.right=new Node(5);
+            // root.left.right.left=new Node(6);
+            // root.left.right.right=new Node(7);
+            // System.out.println(inOrder(root));
+            // -----------------------------------------------------
             Node root = new Node(1);
             root.left = new Node(2);
-            root.right = new Node(7);
-            root.left.left = new Node(3);
-            root.left.right = new Node(4);
-            root.left.right.left = new Node(5);
-            root.left.right.right = new Node(6);
-            System.out.println(preOrder(root));
+            root.right = new Node(3);
+            root.left.left = new Node(4);
+            root.left.right = new Node(5);
+            root.right.left = new Node(6);
+            root.right.left.right = new Node(7);
+            root.right.left.right.right = new Node(8);
+
       }
 }
