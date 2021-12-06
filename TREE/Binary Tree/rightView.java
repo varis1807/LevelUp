@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class rightView {
-      public void rightViewRec(ArrayList ans, Node root, int level) {
+      public static void rightViewRec(ArrayList ans, Node root, int level) {
             if (root == null)
                   return;
 
@@ -13,7 +13,7 @@ public class rightView {
             rightViewRec(ans, root.left, level + 1);
       }
 
-      public ArrayList<Integer> rightSideView(Node root) {
+      public static    ArrayList<Integer> rightSideView(Node root) {
             ArrayList<Integer> ans = new ArrayList<>();
             rightViewRec(ans, root, 0);
             return ans;
@@ -27,5 +27,6 @@ public class rightView {
             root.right.right = new Node(1);
             root.right.left.left = new Node(6);
             root.right.left.right = new Node(7);
+            System.out.println(rightSideView(root));
       }
 }
