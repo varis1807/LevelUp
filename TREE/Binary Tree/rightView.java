@@ -13,7 +13,7 @@ public class rightView {
             rightViewRec(ans, root.left, level + 1);
       }
 
-      public static    ArrayList<Integer> rightSideView(Node root) {
+      public static ArrayList<Integer> rightSideView(Node root) {
             ArrayList<Integer> ans = new ArrayList<>();
             rightViewRec(ans, root, 0);
             return ans;
