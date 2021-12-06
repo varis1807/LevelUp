@@ -38,10 +38,29 @@ public class iterativeTraversal {
             }
             return ans;
       }
-//post-order
-public static List<Integer> postOrder(Node root){
-      
-}
+
+      // post-order
+      public static List<Integer> postOrder(Node root) {
+            List<Integer> ans = new ArrayList<>();
+            LinkedList<Node> st1 = new LinkedList<>();
+            LinkedList<Node> st2 = new LinkedList<>();
+            if (root == null)
+                  return ans;
+            st1.addFirst(root);
+            while (!st1.isEmpty()) {
+                  root = st1.removeFirst();
+                  st2.addFirst(root);
+                  if (root.left != null)
+                        st1.addFirst(root.left);
+                  if (root.right != null)
+                        st1.addFirst(root.right);
+            }
+            while (!st2.isEmpty())
+                  ans.add(st2.removeFirst().val);
+
+            return ans;
+      }
+
       public static void main(String[] args) {
             // -----------------------------------------------------
             // Node root = new Node(1);
@@ -70,6 +89,6 @@ public static List<Integer> postOrder(Node root){
             root.right.left = new Node(6);
             root.right.left.right = new Node(7);
             root.right.left.right.right = new Node(8);
-
+            System.out.println(postOrder(root));
       }
 }
