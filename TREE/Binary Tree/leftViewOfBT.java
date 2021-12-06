@@ -39,7 +39,6 @@ public class leftViewOfBT {
 
       ArrayList<Integer> leftView(Node root) {
             ArrayList<Integer> ans = new ArrayList<>();
-
             leftViewRec(ans, root, 0);
 
             return ans;
