@@ -7,8 +7,8 @@ public class iterativeTraversal {
             if (root == null)
                   return ans;
             LinkedList<Node> st = new LinkedList<>();
-            st.addLast(root);
-            while (st.isEmpty()) {
+            st.addFirst(root);
+            while (!st.isEmpty()) {
                   root = st.removeFirst();
                   ans.add(root.val);
                   if (root.right != null)
@@ -19,6 +19,13 @@ public class iterativeTraversal {
             return ans;
       }
 
+      // in-order
+      public static List<Integer> inOrder(Node root) {
+            List<Integer> ans = new ArrayList<>();
+            LinkedList<Node> st=new LinkedList<>();
+            
+      }
+
       public static void main(String[] args) {
             Node root = new Node(1);
             root.left = new Node(2);
@@ -27,5 +34,6 @@ public class iterativeTraversal {
             root.left.right = new Node(4);
             root.left.right.left = new Node(5);
             root.left.right.right = new Node(6);
+            System.out.println(preOrder(root));
       }
 }
