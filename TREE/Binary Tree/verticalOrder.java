@@ -54,11 +54,11 @@ public class verticalOrder {
             // insert those elements in vertcial order first which are coming first in level
             // order
 
-            Queue<pair> q = new LinkedList<>();
+            LinkedList<pair> q = new LinkedList<>();
 
             q.addLast(new pair(root, 0));
 
-            while (q.size()) {
+            while (q.size()!=0) {
                   int size = q.size();
 
                   while (size-- > 0) {

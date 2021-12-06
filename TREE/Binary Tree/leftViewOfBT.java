@@ -25,7 +25,7 @@ public class leftViewOfBT {
       }
 
       // recursion
-      public void leftViewRec(ArrayList<Integer> ans, Node root, int level) {
+      public static void leftViewRec(ArrayList<Integer> ans, Node root, int level) {
             if (root == null)
                   return;
 
@@ -37,7 +37,7 @@ public class leftViewOfBT {
             leftViewRec(ans, root.right, level + 1);
       }
 
-      ArrayList<Integer> leftView(Node root) {
+      public static ArrayList<Integer> leftView(Node root) {
             ArrayList<Integer> ans = new ArrayList<>();
             leftViewRec(ans, root, 0);
 
