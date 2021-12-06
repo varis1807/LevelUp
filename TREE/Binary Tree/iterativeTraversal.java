@@ -7,7 +7,16 @@ public class iterativeTraversal {
             if (root == null)
                   return ans;
             LinkedList<Node> st = new LinkedList<>();
-
+            st.addLast(root);
+            while (st.isEmpty()) {
+                  root = st.removeFirst();
+                  ans.add(root.val);
+                  if (root.right != null)
+                        st.addFirst(root.right);
+                  if (root.left != null)
+                        st.addFirst(root.left);
+            }
+            return ans;
       }
 
       public static void main(String[] args) {
