@@ -29,4 +29,7 @@ public class traversal {
             ans.add(root.val);
             return ans;
       }
+      public static void main(String[] args){
+            
+      }
 }
