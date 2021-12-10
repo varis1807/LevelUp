@@ -19,7 +19,7 @@ public class kLevelDistance {
             return ans;
       }
 
-      public void kdown_fill(Node root, int k, List<Integer> ans, Node blocker) {
+      public static void kdown_fill(Node root, int k, List<Integer> ans, Node blocker) {
             if (root == null || k < 0 || root == blocker)
                   return;
 
