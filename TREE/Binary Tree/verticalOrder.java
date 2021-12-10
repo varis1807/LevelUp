@@ -63,7 +63,7 @@ public class verticalOrder {
 
                   while (size-- > 0) {
                         pair top = q.removeFirst();
-
+ 
                         ans.add(top.vl + shift).add(top.node.val);
 
                         if (top.node.left != null) {
