@@ -2,6 +2,7 @@ import java.util.*;
 
 public class verticalOrder {
       // vertical order =======================================================
+
       class pair {
             Node node;
             int vl;
@@ -50,20 +51,27 @@ public class verticalOrder {
 
             vertical_rec(root, 0, ans, Math.abs(minMax[0]));
 
+
+
+
+
+
+            //----------------------------------------------------------------------------------------
+
             // without recursion (using level order)
             // insert those elements in vertcial order first which are coming first in level
             // order
 
-            LinkedList<pair> q = new LinkedList<>();
+            Queue<pair> q = new LinkedList<>();
 
             q.addLast(new pair(root, 0));
 
-            while (q.size()!=0) {
+            while (q.size()) {
                   int size = q.size();
 
                   while (size-- > 0) {
                         pair top = q.removeFirst();
- 
+
                         ans.add(top.vl + shift).add(top.node.val);
 
                         if (top.node.left != null) {
