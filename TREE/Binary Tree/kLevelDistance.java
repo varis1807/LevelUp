@@ -46,7 +46,7 @@ public class kLevelDistance {
       }
       // O(1)
 
-      public int k_far_find(Node root, Node target, int k, List<Integer> ans) {
+      public static int k_far_find(Node root, Node target, int k, List<Integer> ans) {
             if (root == null)
                   return 1;
 
