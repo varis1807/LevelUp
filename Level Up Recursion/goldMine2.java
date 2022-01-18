@@ -7,7 +7,7 @@ public class goldMine2 {
                   return;
 
             }
- 
+
             visited[i][j] = true;
             bag.add(arr[i][j]);
             travelAndCollectGold(arr, i - 1, j, visited, bag);
@@ -43,41 +43,40 @@ public class goldMine2 {
       public static int[][] dir = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
 
       public static void main(String[] args) {
-            int[][] mat = { 
-                  { 10, 0, 100, 200, 0, 8, 0 },
-                  { 20, 0, 0, 0, 0, 6, 0 }, 
-                  { 30, 0, 0, 9, 12, 3, 4 },
-                  { 40, 0, 2, 5, 8, 3, 11 }, 
-                  { 0, 0, 0, 0, 0, 9, 0 }, 
-                  { 5, 6, 7, 0, 7, 4, 2 },
-                  { 8, 9, 10, 0, 1, 10, 8 } };
-                  getMaxGold(mat);
-            int maxSum = -(int) 1e9;
-            for (int i = 0; i < mat.length; i++) {
-                  for (int j = 0; j < mat[i].length; j++) {
-                        if (mat[i][j] > 0)
-                              maxSum = Math.max(maxSum, collectGold(i, j, mat, dir));
-                  }
-            }
-            System.out.println(maxSum);
+            int[][] mat = {
+                        { 10, 0, 100, 200, 0, 8, 0 },
+                        { 20, 0, 0, 0, 0, 6, 0 },
+                        { 30, 0, 0, 9, 12, 3, 4 },
+                        { 40, 0, 2, 5, 8, 3, 11 },
+                        { 0, 0, 0, 0, 0, 9, 0 },
+                        { 5, 6, 7, 0, 7, 4, 2 },
+                        { 8, 9, 10, 0, 1, 10, 8 } };
+            getMaxGold(mat);
+            // int maxSum = -(int) 1e9;
+            // for (int i = 0; i < mat.length; i++) {
+            // for (int j = 0; j < mat[i].length; j++) {
+            // if (mat[i][j] > 0)
+            // maxSum = Math.max(maxSum, getMaxGold(i, j, mat, dir));
+            // }
+            // }
+            // System.out.println(maxSum);
       }
 
-      public static int collectGold(int sr, int sc, int[][] mat, int[][] dir) {
-            int n = mat.length;
-            int m = mat[0].length, maxSum = 0;
-            int val = mat[sr][sc];
-            mat[sr][sc]=-mat[sr][sc];
-            for (int[] d : dir) {
-                  int r = sr + d[0];
-                  int c = sc + d[1];
-                  if (r >= 0 && c >= 0 && r < n && c < m && mat[r][c] > 0) {
-                        int recAns = collectGold(r, c, mat, dir);
-                        if (maxSum < recAns)
-                              maxSum = recAns;
-                  }
-            }
-            mat[sr][sc]=-mat[sr][sc];
-            return maxSum + val;
-      }
-
+      // public static int collectGold(int sr, int sc, int[][] mat, int[][] dir) {
+      // int n = mat.length;
+      // int m = mat[0].length, maxSum = 0;
+      // int val = mat[sr][sc];
+      // mat[sr][sc]=-mat[sr][sc];
+      // for (int[] d : dir) {
+      // int r = sr + d[0];
+      // int c = sc + d[1];
+      // if (r >= 0 && c >= 0 && r < n && c < m && mat[r][c] > 0) {
+      // int recAns = collectGold(r, c, mat, dir);
+      // if (maxSum < recAns)
+      // maxSum = recAns;
+      // }
+      // }
+      // mat[sr][sc]=-mat[sr][sc];
+      // return maxSum + val;
+      // }
 }
