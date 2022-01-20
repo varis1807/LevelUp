@@ -2,7 +2,6 @@ import java.util.*;
 
 public class FriendsPairing2 {
       public static Scanner scn = new Scanner(System.in);
-
       public static void friendsPairing(int count, int n, boolean[] used, String asf) {
             if (count == n) {
                   System.out.println(asf);
