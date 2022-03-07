@@ -14,7 +14,7 @@ public class segregate0sand1s {
 
             while (ptr < size) {
                   if (arr[ptr] == 0) {
-                        swap(arr[++zero_ptr], arr[ptr]);
+                        swap(arr, ++zero_ptr, ptr);
                   }
                   ptr++;
             }
