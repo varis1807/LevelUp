@@ -1,4 +1,4 @@
-public class rotateByK {
+public class rotateArrByK {
       public void rotate(int[] nums, int k) {
             k %= nums.length;
             reverse(nums, 0, nums.length - 1);
