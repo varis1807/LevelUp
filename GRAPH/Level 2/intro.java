@@ -45,11 +45,22 @@ public class intro {
             addEdge(1, 3, 4, graph);
             addEdge(1, 2, 3, graph);
             addEdge(3, 4, 5, graph);
+            addEdge(3, 1, 4, graph);
+            addEdge(2, 1, 3, graph);
             addEdge(2, 4, 7, graph);
+            addEdge(4, 2, 7, graph);
+            addEdge(4, 3, 5, graph);
             addEdge(4, 9, 8, graph);
             addEdge(4, 10, 10, graph);
-            addEdge(9, 10, 8, graph);
-            addEdge(4, 6, 11, graph);
             addEdge(5, 6, 2, graph);
+            addEdge(5, 7, 3, graph);
+            addEdge(6, 5, 2, graph);
+            addEdge(6, 7, 1, graph);
+            addEdge(7, 6, 1, graph);
+            addEdge(7, 5, 3, graph);
+            addEdge(9, 10, 8, graph);
+            addEdge(9, 4, 8, graph);
+            addEdge(10, 9, 8, graph);
+            addEdge(10, 4, 10, graph);
       }
 }
