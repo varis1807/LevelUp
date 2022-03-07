@@ -1,4 +1,5 @@
-public class maxInConfigu {
+import java.util.*;
+public class maxInConfiguration {
       int max_sum(int A[], int N) {
             // Your code here
             int totalSum = 0, n = A.length;
