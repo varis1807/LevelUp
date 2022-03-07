@@ -19,8 +19,11 @@ public class segregatePositiveInteger {
                   ptr++;
             }
       }
+
       public static void main(String[] args) {
-            int[] arr={10,20,30,-45,-95,50,-8,65,-9,-69};
-            
+            int[] arr = { 10, 20, 30, -45, -95, 50, -8, 65, -9, -69 };
+            segPosNeg(arr);
+            for (int ele : arr)
+                  System.out.println(ele);
       }
 }
