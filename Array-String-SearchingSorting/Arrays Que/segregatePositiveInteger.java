@@ -1,6 +1,12 @@
 import java.util.*;
 
 public class segregatePositiveInteger {
+      public static void swap(int[] arr, int i, int j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+      }
+
       public static void segPosNeg(int[] arr) {
             int neg_ptr = -1;
             int ptr = 0;
@@ -8,9 +14,12 @@ public class segregatePositiveInteger {
 
             while (ptr < size) {
                   if (arr[ptr] < 0) {
-                        swap(arr[++neg_ptr], arr[ptr]);
+                        swap(arr, ++neg_ptr, ptr);
                   }
                   ptr++;
             }
+      }
+      public static void main(String[] args) {
+            
       }
 }
