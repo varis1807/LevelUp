@@ -224,6 +224,7 @@ public class foundation {
         for (int i = 0; i < code.length(); i++) {
             count += nokiaKeyPad(recAns, ans + code.charAt(i));
         }
+        
         return count;
     }
 
