@@ -1,3 +1,13 @@
+class ListNode {
+      int val;
+      ListNode next;
+
+      ListNode(int x) {
+            val = x;
+            next = null;
+      }
+}
+
 public class UnFold {
       public static ListNode reverse(ListNode head) {
             if (head == null || head.next == null)
